@@ -34,4 +34,28 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    var playerOne = ArrayList<Int>()
+    var playerTwo = ArrayList<Int>()
+    var activePlayer = 1
+
+    private fun playGame(buttonId:Int, selectedButton: Button){
+        if (playerOne.isEmpty()){
+            activePlayer = 1
+        }
+        if(activePlayer == 1){
+            selectedButton.text = "X"
+            playerOne.add(buttonId)
+            activePlayer = 2
+        } else {
+            selectedButton.text = "O"
+            playerTwo.add(buttonId)
+            activePlayer = 1
+        }
+
+        selectedButton.isEnabled = false
+        checkWinner()
+    }
+
+
+
 }
