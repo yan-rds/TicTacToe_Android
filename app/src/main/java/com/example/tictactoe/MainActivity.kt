@@ -115,6 +115,22 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun getButtonList(): ArrayList<Button>{
+
+        val buttonList = ArrayList<Button>()
+        buttonList.add(findViewById(R.id.button))
+        buttonList.add(findViewById(R.id.button2))
+        buttonList.add(findViewById(R.id.button3))
+        buttonList.add(findViewById(R.id.button4))
+        buttonList.add(findViewById(R.id.button5))
+        buttonList.add(findViewById(R.id.button6))
+        buttonList.add(findViewById(R.id.button7))
+        buttonList.add(findViewById(R.id.button8))
+        buttonList.add(findViewById(R.id.button9))
+
+        return buttonList
+    }
+
 
 
 }
