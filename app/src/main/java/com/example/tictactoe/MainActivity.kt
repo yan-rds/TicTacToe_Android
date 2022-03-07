@@ -101,5 +101,20 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private fun playAgain(){
+
+        val buttonList = getButtonList()
+
+        for (button in buttonList){
+            button.isEnabled = true
+            button.text = ""
+        }
+
+        playerOne = ArrayList()
+        playerTwo = ArrayList()
+
+    }
+
+
 
 }
