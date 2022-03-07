@@ -56,6 +56,50 @@ class MainActivity : AppCompatActivity() {
         checkWinner()
     }
 
+    private fun checkWinner(){
+        var winner = 3
+        var isGameEnded = false
+        if(
+            playerOne.contains(1) && playerOne.contains(2) && playerOne.contains(3) ||
+            playerOne.contains(4) && playerOne.contains(5) && playerOne.contains(6) ||
+            playerOne.contains(7) && playerOne.contains(8) && playerOne.contains(9) ||
+            playerOne.contains(1) && playerOne.contains(4) && playerOne.contains(7) ||
+            playerOne.contains(2) && playerOne.contains(5) && playerOne.contains(8) ||
+            playerOne.contains(3) && playerOne.contains(6) && playerOne.contains(9) ||
+            playerOne.contains(1) && playerOne.contains(5) && playerOne.contains(9) ||
+            playerOne.contains(3) && playerOne.contains(5) && playerOne.contains(7)) {
+            winner = 1
+            Toast.makeText(this,"X won the game!", Toast.LENGTH_LONG).show()
+            isGameEnded = true
+        }else if(
+            playerTwo.contains(1) && playerTwo.contains(2) && playerTwo.contains(3) ||
+            playerTwo.contains(4) && playerTwo.contains(5) && playerTwo.contains(6) ||
+            playerTwo.contains(7) && playerTwo.contains(8) && playerTwo.contains(9) ||
+            playerTwo.contains(1) && playerTwo.contains(4) && playerTwo.contains(7) ||
+            playerTwo.contains(2) && playerTwo.contains(5) && playerTwo.contains(8) ||
+            playerTwo.contains(3) && playerTwo.contains(6) && playerTwo.contains(9) ||
+            playerTwo.contains(1) && playerTwo.contains(5) && playerTwo.contains(9) ||
+            playerTwo.contains(3) && playerTwo.contains(5) && playerTwo.contains(7)) {
+            winner = 2
+            Toast.makeText(this,"O won the game!", Toast.LENGTH_LONG).show()
+            isGameEnded = true
+        }else if (playerOne.size == 5 && winner != 1){
+            Toast.makeText(this, "DRAW", Toast.LENGTH_LONG).show()
+            isGameEnded = true
+        }
+
+        if (isGameEnded){
+            val restartButton = findViewById<Button>(R.id.restartButton)
+            val buttonList = getButtonList()
+
+            restartButton.isVisible = true
+
+            for (button in buttonList){
+                button.isEnabled = false
+            }
+        }
+
+    }
 
 
 }
