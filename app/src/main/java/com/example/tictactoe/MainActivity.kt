@@ -13,5 +13,25 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
+    fun buttonClick(view:View){
+        val selectedButton = view as Button
+        var buttonId = 0
+
+        when(selectedButton.id){
+            R.id.button -> buttonId = 1
+            R.id.button2 -> buttonId = 2
+            R.id.button3 -> buttonId = 3
+            R.id.button4 -> buttonId = 4
+            R.id.button5 -> buttonId = 5
+            R.id.button6 -> buttonId = 6
+            R.id.button7 -> buttonId = 7
+            R.id.button8 -> buttonId = 8
+            R.id.button9 -> buttonId = 9
+            R.id.restartButton -> playAgain()
+        }
+        if (buttonId != 0) {
+            playGame(buttonId, selectedButton)
+        }
+    }
 
 }
